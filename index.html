@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <title>BC56_LeDuy_JS5-Buoi15</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body style="height: 1600px">
+    <div class="container">
+      <h1>Bài 1 - JS - Buổi 15</h1>
+      <div class="form-group mt-5">
+        <label for="">Điểm chuẩn</label>
+        <input type="number" class="form-control" id="diem-chuan" />
+      </div>
+
+      <div class="form-group">
+        <label for="">Chọn khu vực</label>
+        <select class="form-control" name="" id="khu-vuc">
+          <option value="0">X (không ưu tiên)</option>
+
+          <option value="2">A</option>
+          <option value="1">B</option>
+          <option value="0.5">C</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="">Chọn đối tượng</label>
+        <select class="form-control" name="" id="doi-tuong">
+          <option value="0">0 (không ưu tiên)</option>
+
+          <option value="2.5">1</option>
+          <option value="1.5">2</option>
+          <option value="1">3</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="">Nhập điểm môn thứ 1</label>
+        <input type="number" class="form-control" id="diem-mon-thu-1" />
+      </div>
+      <div class="form-group">
+        <label for="">Nhập điểm môn thứ 2</label>
+        <input type="number" class="form-control" id="diem-mon-thu-2" />
+      </div>
+      <div class="form-group">
+        <label for="">Nhập điểm môn thứ 3</label>
+        <input type="number" class="form-control" id="diem-mon-thu-3" />
+      </div>
+      <button onclick="tongSoDiem()" class="btn btn-success">KẾT QUẢ</button>
+      <div class="mt-2 alert-warning" id="kq1"></div>
+    </div>
+
+    <hr />
+    <div class="container">
+      <h1>Bài 2 - JS - Buổi 15</h1>
+      <div class="form-group mt-2">
+        <label for="">Nhập họ tên</label>
+        <input type="text" class="form-control" id="ten-nguoi-su-dung" />
+      </div>
+      <div class="form-group">
+        <label for="">Nhập số kw</label>
+        <input type="number" class="form-control" id="so-kw" />
+      </div>
+      <button onclick="tinhTienDien()" class="btn btn-success">
+        Tính tiền điện
+      </button>
+      <div class="mt-2 alert-warning" id="kq2"></div>
+    </div>
+
+    <hr />
+
+    <div class="container">
+      <h1>Bài 3 - JS - Buổi 15</h1>
+
+      <div class="form-group">
+        <label for="">Nhập họ tên</label>
+        <input type="text" class="form-control" id="ho-ten" />
+      </div>
+      <div class="form-group">
+        <label for="">Tổng thu nhập năm</label>
+        <input type="number" class="form-control" id="tong-thu-nhap-nam" />
+      </div>
+      <div class="form-group">
+        <label for="">Số người phụ thuộc</label>
+        <input type="number" class="form-control" id="so-nguoi-phu-thuoc" />
+      </div>
+      <button onclick="tinhTienThue()" class="btn btn-success">
+        Tính tiền thuế
+      </button>
+      <div class="mt-2 alert-danger" id="kq3"></div>
+    </div>
+
+    <hr />
+
+    <div class="container">
+      <h1>Bài 4 - JS - Buổi 15</h1>
+      <div class="form-group">
+        <label for=""></label>
+        <select
+          onchange="anHienInput()"
+          class="form-control mt-2"
+          name=""
+          id="loai-khach-hang"
+        >
+          <option>Chon loại khách hàng</option>
+          <option value="nhaDan">Nhà dân</option>
+          <option value="doanhNghiep">Doanh nghiệp</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for=""></label>
+        <input
+          type="text"
+          class="form-control"
+          id="ma-khach-hang"
+          placeholder="Mã khách hàng"
+        />
+      </div>
+      <div class="form-group">
+        <label for=""></label>
+        <input
+          type="number"
+          class="form-control"
+          id="so-kenh-cao-cap"
+          placeholder="Số kênh cao cấp"
+        />
+      </div>
+      <div class="form-group">
+        <label for=""></label>
+        <input
+          style="display: none"
+          type="number"
+          class="form-control"
+          id="so-ket-noi"
+          placeholder="Số kết nối"
+        />
+      </div>
+      <button onclick="tinhTien()" class="btn btn-success mt-2">
+        Tính tiền cáp
+      </button>
+      <div class="alert-danger mt-2" id="kq4"></div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
